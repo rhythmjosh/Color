@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>color me mine</title>
+    <style type="text/css">
+        h2{
+            text-align:center;
+        }
+        #wrapper{
+            margin-left:auto;
+            margin-right:auto;
+            width:500px;
+        }
+        .palette1, .palette2, .palette3, .palette4, .palette5{
+            height:30px;
+            width:30px;
+            border: solid black 1px;
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+        .palette1{
+            background:red;
+        }
+        .palette2{
+            background:green;
+        }
+        .palette3{
+            background:blue;
+        }
+        .palette4{
+            background:yellow
+        }
+        .palette5{
+            background:grey;
+        }
+        .block1, .block2, .block3, .block4, .block5{
+            float:left;
+            height:100px;
+            width:100px;
+            border:solid black 1px;
+            margin-left:10px;
+            margin-right:10px;
+        }
+        #canvas{
+             margin-left:400px;
+        }
+    </style>
+    <script type="text/javascript">
+        var currentColor;
+        function takeColor(colorname){
+            currentColor = colorname;
+        }
+        function giveColor(event) {
+            var element = event.target;
+            element.style.backgroundColor = currentColor;
+        }
+    </script>
+</head>
+<body>
+    <h2>Lets color!!!</h2>
+    <div id="wrapper">
+        <div class="palette1" onclick="takeColor('red')"></div>
+        <div class="palette2" value = "green" onclick="takeColor('green')"></div>
+        <div class="palette3" value = "blue" onclick="takeColor('blue')"></div>
+        <div class="palette4" value = "yellow" onclick= "takeColor('yellow')"></div>
+        <div class="palette5" value = "grey" onclick = "takeColor('grey')"></div>
+    </div>
+    <div id="canvas">
+        <div class="block1" onclick= "giveColor(event)"></div>
+        <div class="block2" onclick = "giveColor(event)"></div>
+        <div class="block3" onclick = "giveColor(event)"></div>
+        <div class="block4" onclick = "giveColor(event)"></div>
+        <div class="block5" onclick = "giveColor(event)"></div>
+    </div>
+</body>
+</html>
